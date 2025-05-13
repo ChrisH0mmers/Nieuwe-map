@@ -7,7 +7,7 @@
 body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* laat het scrollen */
 }
 
 .section {
@@ -42,7 +42,7 @@ body, html {
   margin: 0 auto;
 }
 
-.scroll-down {
+.scroll-down { /* Scroll animation */
   font-size: 2rem;
   margin-top: 2rem;
   animation: bounce 2s infinite;
