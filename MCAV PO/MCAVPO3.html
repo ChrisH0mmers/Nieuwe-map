@@ -4,20 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webblog MCAV</title>
-  <link rel="stylesheet" href="MCAVPO3.css" /> <!--configureert de css code voor de HTML script-->
+  <link rel="stylesheet" href="MCAVPO3.css" />
 </head>
 <body>
   <header class="hero section">
     <div class="hero-content">
-      <h1>Webblog MCVA</h1>
+      <h1>Webblog MCAV</h1>
       <h2>Lorem ipsum dolor sit amet</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus vitae odio accumsan luctus.</p>
       <div class="scroll-down">▼</div>
     </div>
   </header>
 
+  <ul>
+    <li><a href="#artikel1">Artikel 1</a></li>
+    <li><a href="#artikel2">Artikel 2</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Meer</a>
+      <ul class="dropdown-menu">
+        <li><a href="#artikel3">Artikel 3</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </li>
+  </ul>
+
   <main>
-    <section class="info-block section">
+    <section class="info-block section" id="artikel1">
       <img src="https://via.placeholder.com/600x400" alt="Afbeelding 1" />
       <div class="text">
         <h3>Artikel 1</h3>
@@ -25,7 +37,7 @@
       </div>
     </section>
 
-    <section class="info-block section reverse">
+    <section class="info-block section reverse" id="artikel2">
       <img src="https://via.placeholder.com/600x400" alt="Afbeelding 2" />
       <div class="text">
         <h3>Artikel 2</h3>
@@ -33,7 +45,7 @@
       </div>
     </section>
 
-    <section class="info-block section">
+    <section class="info-block section" id="artikel3">
       <img src="https://via.placeholder.com/600x400" alt="Afbeelding 3" />
       <div class="text">
         <h3>Artikel 3</h3>
