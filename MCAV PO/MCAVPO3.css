@@ -316,7 +316,7 @@ footer {
   justify-content: space-between;
   height: 200px; /* Hoogte van de blokken */
   margin-top: 20px;
-  background-color: hsl(114, 20%, 90%)
+  background-color: hsl(114, 38.50%, 94.90%)
 }
 
 
@@ -359,7 +359,21 @@ footer {
 /* Responsiveness for smaller screens */
 @media screen and (max-width: 768px) {
   .articles-container {
-    grid-template-columns: 1fr 1fr; /* 2 columns on small screens */
+    grid-template-columns: 1fr 1fr; /* 2 columns on small screens, not yet tested... */
   }
 }
 
+/*
+To do
+
+
+-Make the articles page responsive
+-Add a hover effect to the article blocks
+-Add a shadow effect to the article blocks
+-Add a transition effect to the article blocks
+-Do the testing for the responsiveness
+-Do the testing for the hover effect
+-Do the testing for the shadow effect
+-Do the testing for the transition effect
+-Do the testing for the articles page
+*/
