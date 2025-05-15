@@ -363,11 +363,16 @@ footer {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .articles-container {
+    grid-template-columns: 1fr; /* 1 column on extra small screens */
+  }
+}
+
 
 
 /*
 To do
-
 
 -Make the articles page responsive
 -Add a hover effect to the article blocks
