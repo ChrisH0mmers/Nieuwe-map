@@ -37,7 +37,7 @@ li a, .dropdown-option {
 }
 
 li a:hover, .dropdown:hover .dropdown-option {
-  background-color: #f39a1d;
+  background-color: #Ffa500;
 }
 
 li.dropdown {
@@ -47,7 +47,7 @@ li.dropdown {
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #44e2d5;
+  background-color: hsl(30, 94%, 55%);
   border: 1px solid #ccc;
   padding: 0;
   margin: 0;
@@ -71,7 +71,7 @@ li.dropdown {
 }
 
 .hero {
-  background: linear-gradient(to bottom right, #0ea5e9, #3b82f6);
+  background: linear-gradient(to bottom right, #Ffa500, #Ffa500);
   color: white;
   text-align: center;
   flex-direction: column;
@@ -253,7 +253,7 @@ li.dropdown {
 }
 
 .hero.section {
-  background: linear-gradient(to bottom right, #0ea5e9, #3b82f6);
+  background: linear-gradient(to bottom right, #Ffa500, #Ffa500);
   padding: 4rem 2rem;
   color: white;
   text-align: center;
