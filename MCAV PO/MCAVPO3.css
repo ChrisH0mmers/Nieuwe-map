@@ -5,7 +5,7 @@
 }
 
 body, html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Bebas Regular;
   height: 100%;
   behavior: smooth;
   padding: 0; /* Verwijder eventuele marges van body */
@@ -15,14 +15,27 @@ body, html {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   background-color: #208926;
-  display: flex; /* Zorgt ervoor dat de menu-items horizontaal worden */
-  justify-content: center; /* Centraal uitlijnen */
-  width: 100%;
-  position: relative;
-  z-index: 10; /* Zorgt ervoor dat het menu boven de rest komt */
+  display: flex;
+  justify-content: center;
 }
+
+
+
+
+ul li:nth-child(1) a {
+  color: red;
+}
+
+ul li:nth-child(2) a {
+  color: white;
+}
+
+ul li:nth-child(3) a {
+  color: blue;
+}
+
 
 li {
   margin: 0 10px; /* Afstand tussen de items */
@@ -32,9 +45,10 @@ li a, .dropdown-option {
   display: inline-block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 16px; /* <-- deze padding maakt de balk hoog */
   text-decoration: none;
 }
+
 
 li a:hover, .dropdown:hover .dropdown-option {
   background-color: #Ffa500;
@@ -42,6 +56,26 @@ li a:hover, .dropdown:hover .dropdown-option {
 
 li.dropdown {
   position: relative;
+}
+li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+li a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .dropdown-menu {
@@ -71,28 +105,37 @@ li.dropdown {
 }
 
 .hero {
-  background: linear-gradient(to bottom right, #Ffa500, #Ffa500);
-  color: white;
+  background: linear-gradient(to bottom, #AE1C28 0% 33.3%, #FFFFFF 33.3% 66.6%, #21468B 66.6% 100%);
+  color: black;
   text-align: center;
   flex-direction: column;
-  height: 100vh; /* Zorgt ervoor dat de hero sectie het volledige scherm opneemt */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.hero-content {
+  animation: fadeIn 0.2s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .hero-content h1 {
-  font-size: 4rem;
+
   margin-bottom: 1rem;
 }
 
 .hero-content h2 {
-  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -107,6 +150,11 @@ li.dropdown {
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
+}
+body, h1, h2, h3, p {
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  text-rendering: optimizeLegibility;  
 }
 
 .info-block {
@@ -166,7 +214,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #208926;
+  background-color: #Ffa500;
   display: flex;
   justify-content: center;
 }
@@ -252,23 +300,7 @@ li.dropdown {
   margin-bottom: 0.5rem;
 }
 
-.hero.section {
-  background: linear-gradient(to bottom right, #Ffa500, #Ffa500);
-  padding: 4rem 2rem;
-  color: white;
-  text-align: center;
-}
 
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 0 auto;
-  max-width: 700px;
-}
 
 footer {
   background-color: #1e293b;
@@ -349,6 +381,10 @@ footer {
 }
 .article-block:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
 }
 .article-link {
   color: black;
@@ -362,7 +398,17 @@ footer {
     grid-template-columns: 1fr 1fr; /* 2 columns on small screens, not yet tested... */
   }
 }
-
+@media screen and (max-width: 600px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  .articles-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
 @media screen and (max-width: 480px) {
   .articles-container {
     grid-template-columns: 1fr; /* 1 column on extra small screens */
@@ -374,13 +420,5 @@ footer {
 /*
 To do
 
--Make the articles page responsive
--Add a hover effect to the article blocks
--Add a shadow effect to the article blocks
--Add a transition effect to the article blocks
--Do the testing for the responsiveness
--Do the testing for the hover effect
--Do the testing for the shadow effect
--Do the testing for the transition effect
--Do the testing for the articles page
+-Make the articles a link
 */
